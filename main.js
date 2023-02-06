@@ -6,6 +6,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
+gsap.registerPlugin(ScrollTrigger)
+ScrollTrigger.defaults({
+  scrub: 3,
+  ease: 'none',
+})
+
 const gltfLoader = new GLTFLoader()
 
 
@@ -22,17 +28,9 @@ const scene = new THREE.Scene();
 // scene.add(mesh)
 
 
-
-gsap.registerPlugin(ScrollTrigger)
-ScrollTrigger.defaults({
-  scrub: 3,
-  ease: 'none',
-})
-
-
 //Create Logo
 
-gltfLoader.load('wua-v4.gltf', (gltf) => {
+gltfLoader.load('/wua-v4.gltf', (gltf) => {
 
     /**
    * Animation GSAP
